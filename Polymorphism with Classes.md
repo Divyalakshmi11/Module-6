@@ -1,32 +1,49 @@
-# # 🐍 Python OOP: Polymorphism with Classes
+# 🐍 Python OOP: Operator Overloading (Less Than `<`)
 
 ## 🎯 AIM
 
-To create two specific classes — `Beans` and `Mango`. Then, create a **generic function** that can accept any object and determine its **type** (Fruit or Vegetable) and **color**, using polymorphism.
+To write a Python program that demonstrates **operator overloading** by overloading the **less than (`<`)** operator using a custom class.
 
 ---
 
 ## 🧠 ALGORITHM
 
-1. **Create Class `Beans`**:
-   - Define `type()` method that prints `"Vegetable"`.
-   - Define `color()` method that prints `"Green"`.
+1. **Create Class `A`**:
+   - Define the `__init__()` method to initialize the object with a value `a`.
 
-2. **Create Class `Mango`**:
-   - Define `type()` method that prints `"Fruit"`.
-   - Define `color()` method that prints `"Yellow"`.
+2. **Overload the `<` Operator**:
+   - Define the `__lt__()` method with logic:
+     - If `self.a < o.a`, return `"ob1 is less than ob2"`
+     - Else, return `"ob2 is less than ob1"`
 
-3. **Define Generic Function `func(obj)`**:
-   - Call `obj.type()` and `obj.color()` — this works with both `Beans` and `Mango` objects, showcasing **polymorphism**.
+3. **Create Objects**:
+   - Instantiate two objects `ob1` and `ob2` with values.
 
-4. **Create Objects**:
-   - Instantiate `Beans` and `Mango`.
-   - Pass them to `func()` and execute the program.
+4. **Use `<` Operator**:
+   - Use `print(ob1 < ob2)` to trigger the overloaded behavior.
 
 ---
 
 ## 💻 Program
+~~~
+class A:
+    def __init__(self, a):
+        self.a = a
+    def __lt__(self, o):
+        if self.a < o.a:
+            return "ob1 is less than ob2"
+        else:
+            return "ob2 is less than ob1"
 
+ob1 = A(5)
+ob2 = A(10)
+print("Output:")
+print(ob1 < ob2)
+
+Result = ob1 < ob2
+~~~
 ## Output
+<img width="1606" height="974" alt="Screenshot 2025-10-20 163044" src="https://github.com/user-attachments/assets/30ed59ba-627f-46d8-a4ab-b5af78f999f8" />
 
 ## Result
+The program successfully demonstrates operator overloading by overloading the less than (<)operator using a custom class.
